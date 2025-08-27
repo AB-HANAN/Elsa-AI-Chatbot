@@ -204,6 +204,8 @@ Steps:
 
 ⚠️ Remember:
 
+* The filing is not done properly over here, you have to do it yourself ok, as we cant upload large files to Github
+* app.py is the backend which you run in the backend folder, and the src with the public folder is for frontend 
 * Always install all requirements first
 * Run everything inside a **virtual environment**
 * Be patient: training can take days depending on hardware
