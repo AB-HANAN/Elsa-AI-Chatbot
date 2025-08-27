@@ -1,0 +1,200 @@
+/* src/components/Navbar.css */
+.navbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 80px;
+  background: rgba(255, 255, 255, 0.1) !important; /* Added !important */
+  backdrop-filter: blur(10px) !important; /* Added !important */
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important; /* Added !important */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  z-index: 100;
+  transition: width 0.3s ease;
+}
+
+.navbar:hover {
+  width: 200px;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  color: white !important; /* Added !important */
+}
+
+.logo-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.logo-text {
+  opacity: 0;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  color: white !important; /* Added !important */
+}
+
+.navbar:hover .logo-text {
+  opacity: 1;
+}
+
+.navbar-menu {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.nav-link {
+  background: none !important; /* Added !important */
+  border: none;
+  color: white !important; /* Added !important */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar:hover .nav-link {
+  justify-content: flex-start;
+  padding-left: 1.5rem;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.15) !important; /* Added !important */
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, #4fc3f7, #29b6f6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-item.active .nav-link::before {
+  opacity: 1;
+}
+
+.nav-item.active .nav-link {
+  background: rgba(255, 255, 255, 0.1) !important; /* Added !important */
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  color: white !important; /* Added !important */
+}
+
+.nav-label {
+  margin-left: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  width: 0;
+  overflow: hidden;
+  color: white !important; /* Added !important */
+}
+
+.navbar:hover .nav-label {
+  opacity: 1;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    bottom: 0;
+    top: auto;
+    height: 70px;
+    width: 100%;
+    flex-direction: row;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; /* Added !important */
+    padding: 0;
+  }
+  
+  .navbar-logo {
+    display: none;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .nav-item {
+    margin-bottom: 0;
+    flex: 1;
+  }
+  
+  .nav-link {
+    flex-direction: column;
+    padding: 0.5rem;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .nav-icon {
+    margin-bottom: 0.25rem;
+  }
+  
+  .nav-label {
+    font-size: 0.7rem;
+    margin-left: 0;
+    opacity: 1;
+    width: auto;
+  }
+  
+  .navbar:hover {
+    width: 100%;
+  }
+  
+  .navbar:hover .nav-link {
+    justify-content: center;
+    padding-left: 0.5rem;
+  }
+  
+  .nav-link::before {
+    top: auto;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+  }
+}
+
+/* Add these new rules to prevent theme override */
+.navbar * {
+  color: white !important;
+}
+
+.navbar .action-btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+.navbar .action-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}

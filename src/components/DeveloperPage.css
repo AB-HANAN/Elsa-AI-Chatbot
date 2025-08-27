@@ -1,0 +1,67 @@
+.about-page {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+}
+
+.about-content {
+  max-width: 800px;
+  width: 100%;
+  color: white;
+}
+
+.about-content h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #a3bffa;
+}
+
+.about-card h3 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+  color: #a3bffa;
+}
+
+.about-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.about-card ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.about-card li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.about-card li:before {
+  content: '❄️';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}

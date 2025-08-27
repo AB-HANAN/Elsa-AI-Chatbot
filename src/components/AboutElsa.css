@@ -1,0 +1,202 @@
+.about-page {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+  position: relative;
+  overflow: hidden;
+}
+
+.about-content {
+  max-width: 800px;
+  width: 100%;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.vibrant-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.title-word {
+  background: linear-gradient(45deg, #a3bffa, #e9d8fd, #a3bffa);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.5rem;
+  border-radius: 12px;
+  animation: gradientShift 3s ease infinite, float 6s ease-in-out infinite;
+  text-shadow: 0 2px 10px rgba(163, 191, 250, 0.3);
+}
+
+.title-word-1 { animation-delay: 0s; }
+.title-word-2 { animation-delay: 0.3s; }
+
+.title-subtext {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-style: italic;
+  margin-top: 0.5rem;
+  animation: fadeIn 2s ease;
+}
+
+/* Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 0.9; transform: translateY(0); }
+}
+
+/* Snowflake animation */
+.snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  color: #fff;
+  opacity: 0.7;
+  animation: fall linear infinite;
+}
+
+.snowflake:nth-child(1) { left: 10%; animation-duration: 10s; font-size: 1.2rem; }
+.snowflake:nth-child(2) { left: 25%; animation-duration: 12s; font-size: 1rem; }
+.snowflake:nth-child(3) { left: 40%; animation-duration: 14s; font-size: 1.4rem; }
+.snowflake:nth-child(4) { left: 55%; animation-duration: 11s; font-size: 1.1rem; }
+.snowflake:nth-child(5) { left: 70%; animation-duration: 13s; font-size: 1.3rem; }
+.snowflake:nth-child(6) { left: 85%; animation-duration: 15s; font-size: 1rem; }
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
+  z-index: 2;
+}
+
+.about-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #a3bffa;
+  border-bottom: 2px solid rgba(163, 191, 250, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.about-card h3 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+  color: #a3bffa;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-card h3::before {
+  content: '❄️';
+  font-size: 1.2rem;
+}
+
+.about-card p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.about-card ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+.about-card li {
+  padding: 0.5rem 0;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.about-card li:before {
+  content: '✨';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.fun-note {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #68d391;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+/* Fun sparkle animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vibrant-title {
+    font-size: 2.5rem;
+    flex-direction: column;
+  }
+  .about-card {
+    padding: 2rem;
+  }
+}
+/* Frozen special style for Elsa word */
+.title-word-2 {
+  animation-delay: 0.3s;
+  color: #fff !important;
+  -webkit-text-fill-color: initial;
+  background: linear-gradient(45deg, #ffffff, #cfe9ff, #ffffff);
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  text-shadow: 0 0 15px rgba(173, 216, 230, 0.9),
+               0 0 25px rgba(173, 216, 230, 0.7),
+               0 0 40px rgba(135, 206, 250, 0.6);
+}
